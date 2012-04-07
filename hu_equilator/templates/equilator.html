@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Texas Hold'em Heads Up Equilator</title>
+        <link rel='stylesheet' type='text/css' href='static/equilator.css'/>
+        <script type='text/javascript' src='static/jquery.js'></script>
+        <script type='text/javascript' src='static/jquery.flot.min.js'></script>
+        <script type='text/javascript' src='static/jquery.tablesorter.min.js'></script>
+        <script type='text/javascript' src='static/equilator.js'></script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>My Hand:</td>
+                <td><input type='text' id='my_hand_input'></input></td>
+            </tr>
+
+            <tr>
+                <td>My Range:</td>
+                <td><input type='text' id='my_range_input'></input></td>
+            </tr>
+
+            <tr>
+                <td>Villain Range:</td>
+                <td><input type='text' id='villain_range_input'></input></td>
+            </tr>
+
+            <tr>
+                <td>Board:</td>
+                <td><input type='text' id='board_input'></input></td>
+            </tr>
+        </table>
+
+        <input type='button' value='Process Data' id='process_data_btn'></input>
+
+        <div id='placeholder'></div>
+
+        <table id='my_range_table' class='tablesorter' style='position: absolute; top: 10px; left: 620px; width: 200px'>
+            <thead>
+                <tr>
+                    <th>Hand</th>
+                    <th>Mean</th>
+                    <th>Std</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <table id='villain_range_table' class='tablesorter' style='position: absolute; top: 10px; left: 840px; width: 400px'>
+            <thead>
+                <tr>
+                    <th>Hand</th>
+                    <th>Mean</th>
+                    <th>Std</th>
+                    <th>Real Equity</th>
+                    <th>Difference</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </body>
+</html>

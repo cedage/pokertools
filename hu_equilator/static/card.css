@@ -1,0 +1,26 @@
+.hearts {
+    color: red;
+}
+.diamonds {
+    color: blue;
+}
+.clubs {
+    color: green;
+}
+.spades {
+    color: black;
+}
+
+.hearts:after {
+    content: "\2665";
+}
+
+.diamonds:after {
+    content: "\2666";
+}
+.clubs:after {
+    content: "\2663";
+}
+.spades:after {
+    content: "\2660";
+}
