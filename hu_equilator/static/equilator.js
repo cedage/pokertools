@@ -143,6 +143,26 @@ $(document).ready(function() {
     });
 
     $('#my_hand_input').keyup(function(event){
+	var my_hand_string = $('#my_hand_input').val();
+
+        my_hand_string = my_hand_string.replace(/a/g, 'A');
+        my_hand_string = my_hand_string.replace(/k/g, 'K');
+        my_hand_string = my_hand_string.replace(/q/g, 'Q');
+        my_hand_string = my_hand_string.replace(/j/g, 'J');
+        my_hand_string = my_hand_string.replace(/t/g, 'T');
+        my_hand_string = my_hand_string.replace(/S/g, 's');
+        my_hand_string = my_hand_string.replace(/C/g, 'c');
+        my_hand_string = my_hand_string.replace(/D/g, 'd');
+        my_hand_string = my_hand_string.replace(/H/g, 'h');
+        my_hand_string = my_hand_string.replace(/O/g, 'o');
+
+	$('#my_hand_input').val(my_hand_string);
+
+	if(my_hand_string.match(/^([23456789TJQKA][scdh]){2,2}$/)){
+            $('#my_hand_input').css('backgroundColor', 'white');
+	}
+	else $('#my_hand_input').css('backgroundColor', 'rgb(224,120,120)');
+
         $('#my_hand_label').html(convert_card_names($('#my_hand_input').val()));
     });
 
