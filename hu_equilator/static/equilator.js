@@ -12,7 +12,7 @@ function convert_card_name(name){
     var rank = name[0];
     var suit = name[1];
 
-    var result;
+    var result = '';
 
     switch(suit){
         case 's':
@@ -31,10 +31,26 @@ function convert_card_name(name){
     return result;
 }
 
+function convert_card_names(card_names_string){
+    var result = '';
+    var card_names_array = convert_string_to_card_names(card_names_string);
+    for(var i = 0; i < card_names_array.length; i+= 1){
+        result += convert_card_name(card_names_array[i]);
+    }
+    return result;
+}
+
+function convert_string_to_card_names(s){
+    var result = [];
+    for(var i = 0;i < s.length; i += 2){
+        result.push(s[i] + s[i + 1])
+    }
+    return result
+}
+
 function convert_hand_name(name){
-    var card1 = name[0] + name[1];
-    var card2 = name[2] + name[3];
-    return convert_card_name(card1) + convert_card_name(card2);
+    var cards = convert_string_to_card_names(name);
+    return convert_card_name(cards[0]) + convert_card_name(cards[1]);
 }
 
 function plot_my_equity_distribution(){
@@ -124,5 +140,13 @@ $(document).ready(function() {
                 build_villain_range_table();
             }
         );
+    });
+
+    $('#my_hand_input').keyup(function(event){
+        $('#my_hand_label').html(convert_card_names($('#my_hand_input').val()));
+    });
+
+    $('#board_input').keyup(function(event){
+        $('#board_label').html(convert_card_names($('#board_input').val()));
     });
 });
