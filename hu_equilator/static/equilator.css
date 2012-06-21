@@ -1,6 +1,65 @@
-#placeholder {
-    height: 300px;
-    width: 600px;
+#equity_graph_wrapper {
+    position: absolute;
+    top: 155px;
+    left: 10px;
+    width: 460px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#equity_graph_wrapper p {
+    display: none;
+    text-align: center;
+    margin: 0;
+}
+
+#equity_graph {
+    width: 460px; 
+    height: 250px;
+}
+
+#get_data_from_pe_btn {
+    position: absolute;
+    top: 13px;
+    left: 416px;
+    height: 52px;
+    width: 52px;
+}
+
+#evaluate_btn {
+    position: absolute;
+    top: 73px;
+    left: 416px;
+    height: 52px;
+    width: 52px;
+}
+
+input[type=button] {
+    board: 1px solid gray;
+    background-color: white;
+}
+
+#my_range_table {
+    position: absolute;
+    top: 450px;
+    left: 298px;
+    width: 170px
+}
+
+#my_range_table th {
+    width: 50px;
+}
+
+#villain_range_table {
+    position: absolute;
+    top: 450px;
+    left 10px;
+    width: 270px;
+}
+
+#villain_range_table th {
+    width: 50px;
 }
 
 .hearts {
@@ -30,7 +89,10 @@
     content: "\2660";
 }
 
-/* tables */
+body {
+    font-family: arial;
+}
+
 table.tablesorter {
 	font-family:arial;
 	background-color: #CDCDCD;
@@ -39,6 +101,7 @@ table.tablesorter {
 	width: 100%;
 	text-align: left;
 }
+
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {
 	background-color: #e6EEEE;
 	border: 1px solid #FFF;
@@ -69,4 +132,6 @@ table.tablesorter thead tr .headerSortDown {
 table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
 background-color: #8dbdd8;
 }
-
+table.tablesorter caption{
+    font-size: 12pt;
+}

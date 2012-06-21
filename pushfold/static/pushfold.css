@@ -1,0 +1,24 @@
+#input {
+    margin-left: 15;
+}
+
+#push td, #call td {	
+    text-align: center;
+    border: 2 solid lightgrey;
+}
+
+.suited {
+    background-color: rgb(255, 231, 181);
+}
+
+.offsuited {
+    background-color: rgb(231, 239, 247);
+}
+
+.pair {
+    background-color: rgb(206, 222, 198);
+}
+
+#push .highlighted, #call .highlighted {
+    border: 2 solid red;
+}

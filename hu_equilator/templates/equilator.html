@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Texas Hold'em Heads Up Equilator</title>
+        <title>Equilator</title>
         <link rel='stylesheet' type='text/css' href='static/equilator.css'/>
         <script type='text/javascript' src='static/jquery.js'></script>
         <script type='text/javascript' src='static/jquery.flot.min.js'></script>
@@ -11,34 +11,39 @@
         <table>
             <tr>
                 <td>My Hand:</td>
-                <td><input type='text' id='my_hand_input'></input></td>
+                <td><input type='text' id='my_hand_input' tabindex='1' readonly='readonly'></input></td>
                 <td id='my_hand_label'></td>
             </tr>
 
             <tr>
-                <td>My Range:</td>
-                <td><input type='text' id='my_range_input'></input></td>
+		<td>My Range:</td>
+		<td><input type='text' id='my_range_input' tabindex='2' readonly='readonly'></input></td>
                 <td id='my_range_label'></td>
             </tr>
 
             <tr>
-                <td>Villain Range:</td>
-                <td><input type='text' id='villain_range_input'></input></td>
+		<td>Villain Range:</td>
+                <td><input type='text' id='villain_range_input' tabindex='3' readonly='readonly'></input></td>
                 <td id='villain_range_label'></td>
             </tr>
 
             <tr>
                 <td>Board:</td>
-                <td><input type='text' id='board_input'></input></td>
+                <td><input type='text' id='board_input' tabindex='4' readonly='readonly'></input></td>
                 <td id='board_label'></td>
             </tr>
         </table>
 
-        <input type='button' value='Process Data' id='process_data_btn'></input>
+	<input type='button' value='<' id='get_data_from_pe_btn'></input>
+	<input type='button' value='%' id='evaluate_btn'></input>
 
-        <div id='placeholder'></div>
+	<div id = equity_graph_wrapper>
+	    <p>My Hand Equity Distribution</p>
+            <div id='equity_graph'></div>
+	</div>
 
-        <table id='my_range_table' class='tablesorter' style='position: absolute; top: 10px; left: 620px; width: 200px'>
+	<table id='my_range_table' class='tablesorter'>
+	    <caption></caption>
             <thead>
                 <tr>
                     <th>Hand</th>
@@ -49,14 +54,15 @@
             <tbody></tbody>
         </table>
 
-        <table id='villain_range_table' class='tablesorter' style='position: absolute; top: 10px; left: 840px; width: 400px'>
+	<table id='villain_range_table' class='tablesorter'>
+	    <caption></caption>
             <thead>
                 <tr>
                     <th>Hand</th>
                     <th>Mean</th>
                     <th>Std</th>
-                    <th>Real Equity</th>
-                    <th>Difference</th>
+                    <th>REQ</th>
+                    <th>Diff</th>
                 </tr>
             </thead>
             <tbody></tbody>

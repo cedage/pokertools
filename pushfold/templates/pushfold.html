@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>Push-Or-Fold</title>
+		<link rel='stylesheet' type='text/css' href='static/pushfold.css'></link>
+		<script type='text/javascript' src='static/jquery.js'></script>
+		<script type='text/javascript' src='static/pushfold.js'></script>
+	</head>
+	<body>
+		<div id='input'>
+			<table>
+				<tr><td>Big Blind:</td><td><input type='number' value=20 min=0 step=10 id='blind'></input></td><td><span/></td></tr>
+					<tr><td>Effective Stack:</td><td><input type='number' value=500 min=0 step=5 id='stack'></input></td><td></td></tr>
+			</table>
+		</div>
+
+		<table cellspacing=15>
+			<tr>
+				<td>
+					<table id='push'>
+						<caption>PUSH</caption>
+						<tbody></tbody>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table id='call'>
+						<caption>CALL</caption>
+						<tbody></tbody>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+	</body>
+</html>
